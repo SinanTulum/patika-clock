@@ -17,20 +17,20 @@ if (userName.length > 0) {
 function showTime(){
     const days = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
     let today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    let s = today.getSeconds();
-    let d = days[today.getDay()];
-    m = checkTime(m);
-    s = checkTime(s);
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
+    let day = days[today.getDay()];
+    minutes = checkTime(minutes);
+    seconds = checkTime(seconds);
 
-    document.querySelector("#myClock").innerHTML = `${h}: ${m}: ${s}  ${d}`;
-    setTimeout(showTime, 1000);
+    document.querySelector('#myClock').innerHTML = `${hours}: ${minutes}: ${seconds} ${day}`;
+    setTimeout(showTime,1000);
 }
 
 showTime();
 
-function checkTime(i){
+function checkTime(i) {
     if(i<10){
         i = "0"+i
     }
